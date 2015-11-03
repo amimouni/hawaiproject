@@ -7,9 +7,10 @@
       <h1><%= @livingroom.title %></h1>
         <ul>
           <li>Description : <%= @livingroom.description %></li>
-          <li>Capacité : <%= @livingroom.capacity %></li>
-          <li>Prix : <%= @livingroom.price %></li>
-          <li>Adresse : <%= @livingroom.address %></li>
+          <li>Capacity : <%= @livingroom.capacity %></li>
+          <li>Price : <%= @livingroom.price %></li>
+          <li>Address : <%= @livingroom.address %></li>
+          <li>City : <%= @livingroom.city %></li>
         </ul>
 
         <% if @livingroom.user == current_user %>

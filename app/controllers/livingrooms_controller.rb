@@ -56,7 +56,7 @@ private
   end
 
   def livingroom_params
-      params.require(:livingroom).permit(:title, :capacity, :price, :address, :description)
+      params.require(:livingroom).permit(:title, :capacity, :price, :address, :city, :description)
   end
 
 end
