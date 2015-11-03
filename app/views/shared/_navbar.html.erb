@@ -1,24 +1,25 @@
-<nav class="navbar-wagon">
+<nav class="navbar-wagon navbar-wagon-fixed">
   <div class="container navbar-wagon-container">
 
-    <a href="">
-      <%= image_tag "logo.png" %>
-    </a>
+    <%= link_to root_path do %>
+      <%= image_tag "logo.svg" %>
+    <% end %>
 
     <div class="navbar-wagon-pusher"></div>
 
-    <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
+<!--     <form action="" class="navbar-wagon-search hidden-xs hidden-sm">
       <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
       <button type="submit" class="navbar-wagon-search-btn">
         <i class="fa fa-search"></i>
       </button>
-    </form>
+    </form> -->
     <hr class="hidden-xs hidden-sm">
+
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+      <%= link_to root_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
-          <div class="icon-badge icon-badge-blue">3</div>
+          <div class="icon-badge icon-badge-blue">10</div>
         </div>
       <% end %>
       <hr>
@@ -48,6 +49,9 @@
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
-    <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to t(".top_call_to_action", default: "Devenez hôte"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
 </nav>
+
+
+<div class="col-sm-6 col-sm-offset-3 "></div>
