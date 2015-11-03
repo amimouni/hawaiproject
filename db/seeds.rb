@@ -15,6 +15,7 @@ livingrooms = [
     title: "Bel appartement à Montmartre",
     capacity: 45,
     price: 1200,
+    city: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -23,6 +24,7 @@ livingrooms = [
     title: "Bel appartement à Versailles",
     capacity: 6,
     price: 40,
+    city: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -31,6 +33,7 @@ livingrooms = [
     title: "Bel appartement à Pigalle",
     capacity: 2,
     price: 54,
+    city: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -39,6 +42,7 @@ livingrooms = [
     title: "Bel appartement à Oberkampf",
     capacity: 8,
     price: 99,
+    city: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   }
 ]
