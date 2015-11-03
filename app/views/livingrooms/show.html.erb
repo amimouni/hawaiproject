@@ -1,7 +1,22 @@
-<h2>Hello World!</h2>
+<%= link_to 'return to home', livingrooms_path %>
+<br>
 
-<h3>
-  <%= @livingroom.title %>
-  <%= @livingroom.description %>
-  <%= @livingroom.capacity %>
-</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1><%= @livingroom.title %></h1>
+        <ul>
+          <li>Description : <%= @livingroom.description %></li>
+          <li>Capacité : <%= @livingroom.capacity %></li>
+          <li>Prix : <%= @livingroom.price %></li>
+          <li>Adresse : <%= @livingroom.address %></li>
+        </ul>
+
+        <% if @livingroom.user == current_user %>
+          <%= link_to 'edit', edit_livingroom_path(@livingroom), class: "btn btn-primary" %>
+          <%= link_to 'delete', livingroom_path(@livingroom), method: :delete, class: "btn btn-danger" %>
+        <% end %>
+    </div>
+  </div>
+</div>
+
