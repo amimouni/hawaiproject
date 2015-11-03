@@ -1,0 +1,14 @@
+<h1>Please fill this form and it's almost done !</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@livingroom, @booking] do |f| %>
+        <%= f.input :arrival_date %>
+        <%= f.input :departure_date %>
+        <%= f.button :submit, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
