@@ -1,0 +1,17 @@
+<h1>Please add your Living-room</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for @livingroom do |f| %>
+        <%= f.input :title %>
+        <%= f.input :capacity %>
+        <%= f.input :price %>
+        <%= f.input :address %>
+        <%= f.input :description %>
+        <%= f.button :submit, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
