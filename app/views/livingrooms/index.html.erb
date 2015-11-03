@@ -1,0 +1,11 @@
+<h1>
+Hello World!
+</h1>
+<% @livingrooms.each do |f| %>
+  <h3>
+    <%= f.title %>
+    <%= f.description %>
+    <%= f.capacity %>
+    <%= f.price %>
+  </h3>
+<% end %>
