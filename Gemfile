@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Security:
 gem 'figaro'
+gem 'omniauth-facebook'
 
 # Front-end gems:
 gem 'bootstrap-sass', '~> 3.3.1'
