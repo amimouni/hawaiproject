@@ -16,7 +16,7 @@
     <hr class="hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-      <%= link_to root_path, class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="icon-badge icon-badge-blue">10</div>
@@ -47,6 +47,8 @@
       </div>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    <hr>
+      <%= link_to t(".sign_in", default: "Sign-In"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
     <hr>
     <%= link_to t(".top_call_to_action", default: "Devenez hôte"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %>
