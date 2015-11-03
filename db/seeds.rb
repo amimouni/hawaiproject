@@ -5,3 +5,43 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Livingroom.destroy_all
+
+livingrooms = [
+  {
+    address: "1 rue de Paris",
+    user_id: 1,
+    title: "Bel appartement à Montmartre",
+    capacity: 45,
+    price: 1200,
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  },
+  {
+    address: "1 rue de Paris",
+    user_id: 1,
+    title: "Bel appartement à Versailles",
+    capacity: 6,
+    price: 40,
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  },
+  {
+    address: "1 rue de Paris",
+    user_id: 1,
+    title: "Bel appartement à Pigalle",
+    capacity: 2,
+    price: 54,
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  },
+  {
+    address: "1 rue de Paris",
+    user_id: 1,
+    title: "Bel appartement à Oberkampf",
+    capacity: 8,
+    price: 99,
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  }
+]
+
+livingrooms.each { |livingroom| Livingroom.create(livingroom) }
