@@ -1,10 +1,11 @@
+<%= render 'layouts/banner' %>
+
 <div class="container">
   <div class="row">
-    <% @livingrooms.each do |livingroom| %>
+    <% @livingrooms.shuffle.last(3).each do |livingroom| %>
       <div class="col-xs-12 col-sm-4">
         <%= render 'layouts/card', livingroom: livingroom %>
       </div>
     <% end %>
   </div>
 </div>
-

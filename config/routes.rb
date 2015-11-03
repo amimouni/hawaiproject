@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "livingrooms#index"
+  root to: "pages#home"
 
   resources :livingrooms
   # The priority is based upon order of creation: first created -> highest priority.
