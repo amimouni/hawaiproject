@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <% @livingrooms.shuffle.last(3).each do |livingroom| %>
+    <% @livingrooms.shuffle.last(24).each do |livingroom| %>
       <div class="col-xs-12 col-sm-4">
         <%= render 'layouts/card', livingroom: livingroom %>
       </div>
