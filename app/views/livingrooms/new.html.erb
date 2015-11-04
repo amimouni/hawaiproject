@@ -1,7 +1,7 @@
-<h1>Please add your Living-room</h1>
-
 <div class="container">
   <div class="row">
+    <h2 class="text-center">Start renting your place</h2>
+    <h6 class="text-center">...and become f******k rich (more than your tailor)</h6>
     <div class="col-sm-6 col-sm-offset-3">
       <%= simple_form_for @livingroom do |f| %>
         <%= f.input :title %>
@@ -10,7 +10,7 @@
         <%= f.input :address %>
         <%= f.input :city %>
         <%= f.input :description %>
-        <%= f.button :submit, class: "btn btn-danger" %>
+        <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
     </div>
   </div>

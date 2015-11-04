@@ -1,6 +1,6 @@
 class LivingroomsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
-  before_action :set_livingroom, only: [:show, :edit, :update, :destroy]
+  before_action :set_livingroom, only: [:show, :edit, :update, :destroy, :get_total_price]
   # before_action :set_user, only: [:create, :edit, :update, :destroy]
 
 
@@ -14,6 +14,14 @@ class LivingroomsController < ApplicationController
     if params[:capacity]
       @livingrooms = @livingrooms.where(capacity: params[:capacity].to_i..100)
     end
+  end
+
+  def get_total_price
+    # user_input = params['user_input']
+    @departure_date = params['departure_date'].to_date
+    @arrival_date = params['arrival_date'].to_date
+    @length_of_the_stay = (@departure_date - @arrival_date).to_i + 1
+    @total_amount = @length_of_the_stay * @livingroom.price
   end
 
   def show
@@ -30,6 +38,7 @@ class LivingroomsController < ApplicationController
 
     if @livingroom.save
       redirect_to livingroom_path(@livingroom)
+      flash[:notice] = "You have successfully created a new workspace!"
     else
       render :new
     end
