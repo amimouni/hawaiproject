@@ -2,7 +2,7 @@
   <div class="container navbar-wagon-container">
 
     <%= link_to root_path do %>
-      <%= image_tag "logo.svg" %>
+      <%= image_tag "logo_rouge.png" %>
     <% end %>
 
     <div class="navbar-wagon-pusher"></div>
@@ -13,16 +13,16 @@
         <i class="fa fa-search"></i>
       </button>
     </form> -->
-    <hr class="hidden-xs hidden-sm">
+<!--     <hr class="hidden-xs hidden-sm"> -->
 
     <% if user_signed_in? %>
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
+<!--       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link hidden-xs" do %>
         <div class="icon-badge-container">
           <i class="fa fa-envelope-o"></i>
           <div class="icon-badge icon-badge-blue">10</div>
         </div>
-      <% end %>
-      <hr>
+      <% end %> -->
+<!--       <hr> -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag current_user.picture, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
