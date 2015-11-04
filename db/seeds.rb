@@ -12,10 +12,10 @@ livingrooms = [
   {
     address: "24 rue Piat",
     user: User.find(1),
-    title: "Belleville Hills",
+    title: "Boulogne Hills",
     capacity: 4,
     price: 32,
-    city: "Paris",
+    city: "Boulogne",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
    {
@@ -51,7 +51,7 @@ livingrooms = [
     title: "Appartement confortable",
     capacity: 2,
     price: 24,
-    city: "Paris",
+    city: "Lille",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -69,13 +69,13 @@ livingrooms = [
     title: "Grand Loft moderne",
     capacity: 3,
     price: 33,
-    city: "Saint-Germain",
+    city: "Versailles",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
     address: "44 boulevard de menilmontant",
     user: User.find(1),
-    title: "Sympa et calme",
+    title: "Quiet & Lovely",
     capacity: 1,
     price: 11,
     city: "Paris",
@@ -84,7 +84,7 @@ livingrooms = [
   {
     address: "13 rue de la Paix",
     user: User.find(1),
-    title: "Dev & startupers",
+    title: "Devs friendly",
     capacity: 6,
     price: 72,
     city: "Paris",
@@ -93,7 +93,7 @@ livingrooms = [
   {
     address: "46 boulevard saint-martin",
     user: User.find(1),
-    title: "Dev & startupers",
+    title: "Devs & startupers",
     capacity: 4,
     price: 44,
     city: "Paris",
@@ -114,7 +114,7 @@ livingrooms = [
     title: "Bel appartement",
     capacity: 6,
     price: 58,
-    city: "Paris",
+    city: "Nantes",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -159,7 +159,7 @@ livingrooms = [
     title: "Grand Loft moderne",
     capacity: 3,
     price: 33,
-    city: "Saint-Germain",
+    city: "Versailles",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
@@ -174,9 +174,27 @@ livingrooms = [
   {
     address: "13 rue de la Paix",
     user: User.find(1),
-    title: "Dev & startupers",
+    title: "Startupers Welcome",
     capacity: 6,
     price: 72,
+    city: "Paris",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  },
+  {
+    address: "46 boulevard saint-martin",
+    user: User.find(1),
+    title: "Devs & startupers",
+    capacity: 4,
+    price: 44,
+    city: "Lyon",
+    description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
+  },
+  {
+    address: "13 av de la gare",
+    user: User.find(1),
+    title: "Modern with coffee machine",
+    capacity: 3,
+    price: 33,
     city: "Paris",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
