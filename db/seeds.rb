@@ -19,30 +19,31 @@ livingrooms = [
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
-    address: "1 rue de Paris",
+    address: "13 rue du foin",
     user: User.find(1),
-    title: "Bel appartement à Versailles",
+    title: "Bel appartement lumineux",
     capacity: 6,
     price: 40,
-    city: "Paris",
+    city: "Versailles",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
-    address: "1 rue de Paris",
+    address: "3 rue de Paradis",
     user: User.find(1),
-    title: "Bel appartement à Pigalle",
+
+    title: "Appartement confortable et studieux",
     capacity: 2,
     price: 54,
-    city: "Paris",
+    city: "",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   },
   {
-    address: "1 rue de Paris",
+    address: "22 rue du dragon",
     user: User.find(1),
-    title: "Bel appartement à Oberkampf",
+    title: "Grand Loft moderne",
     capacity: 8,
     price: 99,
-    city: "Paris",
+    city: "Saint-Germain",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi accusamus temporibus amet, nemo eos excepturi nisi laborum delectus ut, nobis."
   }
 ]
