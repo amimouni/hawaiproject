@@ -46,6 +46,13 @@ gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem "geocoder"
+
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

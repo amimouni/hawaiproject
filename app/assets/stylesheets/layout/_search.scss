@@ -29,12 +29,16 @@
     padding: 0 30px;
     font-size: 14px;
     outline: none;
+    vertical-align: middle;
   }
   &-input:focus  {
     border: 1px solid #CCCCCC;
   }
 }
 
-.form-control {
-  height: 43px;
+.form-control,
+.btn-primary {
+  height: 42px;
 }
+
+
