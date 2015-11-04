@@ -6,6 +6,14 @@ class LivingroomsController < ApplicationController
 
   def index
     @livingrooms = Livingroom.all
+    if params[:city]
+      if params[:city] != ""
+        @livingrooms = @livingrooms.where(city: params[:city])
+      end
+    end
+    if params[:capacity]
+      @livingrooms = @livingrooms.where(capacity: params[:capacity].to_i..100)
+    end
   end
 
   def get_total_price
@@ -30,6 +38,7 @@ class LivingroomsController < ApplicationController
 
     if @livingroom.save
       redirect_to livingroom_path(@livingroom)
+      flash[:notice] = "You have successfully created a new workspace!"
     else
       render :new
     end
