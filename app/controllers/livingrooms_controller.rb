@@ -6,6 +6,14 @@ class LivingroomsController < ApplicationController
 
   def index
     @livingrooms = Livingroom.all
+    if params[:city]
+      if params[:city] != ""
+        @livingrooms = @livingrooms.where(city: params[:city])
+      end
+    end
+    if params[:capacity]
+      @livingrooms = @livingrooms.where(capacity: params[:capacity].to_i..100)
+    end
   end
 
   def show
