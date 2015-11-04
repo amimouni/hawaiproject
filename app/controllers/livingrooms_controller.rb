@@ -30,6 +30,7 @@ class LivingroomsController < ApplicationController
 
     if @livingroom.save
       redirect_to livingroom_path(@livingroom)
+      flash[:notice] = "You have successfully created a new workspace!"
     else
       render :new
     end
