@@ -17,6 +17,9 @@
           <%= link_to 'edit', edit_livingroom_path(@livingroom), class: "btn btn-primary" %>
           <%= link_to 'delete', livingroom_path(@livingroom), method: :delete, class: "btn btn-danger" %>
         <% end %>
+
+
+        <%= link_to 'book it', new_livingroom_booking_path(@livingroom), class: "btn btn-success" %>
     </div>
   </div>
 </div>

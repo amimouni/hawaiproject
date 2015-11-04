@@ -6,7 +6,11 @@ Rails.application.routes.draw do
     resources :livingrooms, only: [:create, :edit, :update, :destroy]
   end
 
-  resources :livingrooms, only: [:index, :show, :new]
+  resources :livingrooms, only: [:index, :show, :new] do
+    resources :bookings, only: [:new, :create]
+    get 'availability', to: 'bookings#availability'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
