@@ -1,14 +1,30 @@
-<h1>Please fill this form and it's almost done !</h1>
-
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <%= simple_form_for [@livingroom, @booking] do |f| %>
-        <%= f.input :arrival_date %>
-        <%= f.input :departure_date %>
-        <%= f.button :submit, class: "btn btn-danger" %>
-      <% end %>
-    </div>
+      <h1>Please leave a message to the host to finish your request</h1>
+      <p>Reminder :</p>
+      <ul>
+        <li>Your Livingroom : <%= @livingroom.title %></li>
+        <li>From <%= @booking.arrival_date %> to <%= @booking.departure_date %></li>
+        <li>Total price : <%= @booking.total_amount %>€</li>
+      </ul>
+      </div>
+      <div class="col-sm-6 col-sm-offset-3">
+        <p>Please leave a message to the host</p>
+        <%= simple_form_for [@livingroom, @booking] do |f| %>
+          <%= f.input :message %>
+          <%= f.input :arrival_date, :as => 'hidden', input_html: { value: @booking.arrival_date } %>
+          <%= f.input :departure_date, :as => 'hidden', input_html: { value: @booking.departure_date } %>
+          <%= f.input :total_amount, :as => 'hidden', input_html: { value: @booking.total_amount } %>
+          <%= f.button :submit, 'Send request', class: "btn btn-danger" %>
+        <% end %>
+      </div>
+
+      <%# simple_form_for [@livingroom, @booking] do |f| %>
+        <%# f.input :arrival_date, input_html: { value: params[:arrival_date].to_date } %>
+        <%# f.input :departure_date, input_html: { value: params[:departure_date].to_date } %>
+        <%# f.button :submit, class: "btn btn-danger" %>
+      <%# end %>
+
   </div>
 </div>
-

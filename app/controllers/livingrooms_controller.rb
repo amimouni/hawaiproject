@@ -1,11 +1,19 @@
 class LivingroomsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show, :new]
-  before_action :set_livingroom, only: [:show, :edit, :update, :destroy]
+  before_action :set_livingroom, only: [:show, :edit, :update, :destroy, :get_total_price]
   # before_action :set_user, only: [:create, :edit, :update, :destroy]
 
 
   def index
     @livingrooms = Livingroom.all
+  end
+
+  def get_total_price
+    # user_input = params['user_input']
+    @departure_date = params['departure_date'].to_date
+    @arrival_date = params['arrival_date'].to_date
+    @length_of_the_stay = (@departure_date - @arrival_date).to_i + 1
+    @total_amount = @length_of_the_stay * @livingroom.price
   end
 
   def show

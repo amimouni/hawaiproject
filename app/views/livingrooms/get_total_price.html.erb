@@ -13,25 +13,20 @@
           <li>City : <%= @livingroom.city %></li>
         </ul>
 
-        <% if @livingroom.user == current_user %>
-          <%= link_to 'edit', edit_livingroom_path(@livingroom), class: "btn btn-primary" %>
-          <%= link_to 'delete', livingroom_path(@livingroom), method: :delete, class: "btn btn-danger" %>
-        <% end %>
-
     </div>
 
     <div class="col-sm-6 col-sm-offset-3">
-      <br>
-      <h3>Please choose your dates !</h3>
-      <%= form_tag get_total_price_livingroom_path do %>
-        <%= date_field_tag :arrival_date %>
-        <%= date_field_tag :departure_date %>
-        <%= submit_tag 'submit', class: "btn btn-victory" %>
-      <% end %>
+      <h2>Your stay :</h2>
+      <ul>
+        <li>arrival date : <%= @arrival_date %></li>
+        <li>departure date : <%= @departure_date %></li>
+        <li>total length : <%= @length_of_the_stay %></li>
+      </ul>
+      <h2>Total amount : <%= @total_amount %>€</h2>
+      <%= link_to 'send a booking request', new_livingroom_booking_path(@livingroom, departure_date: @departure_date, arrival_date: @arrival_date, total_amount: @total_amount), class: "btn btn-success" %>
     </div>
     </div>
   </div>
 </div>
-
 
 
