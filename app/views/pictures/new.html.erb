@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Your Livingroom has been registered !</h2>
+    <h6 class="text-center">Now it's time to pimp your ad. Please make it sexy.</h6>
+    <div class="col-sm-6 col-sm-offset-3">
+      <%= simple_form_for [@livingroom, @picture] do |f| %>
+        <%= f.input :picture %>
+        <%= f.button :submit, class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

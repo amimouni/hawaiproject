@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151104211848) do
+ActiveRecord::Schema.define(version: 20151105151743) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,18 @@ ActiveRecord::Schema.define(version: 20151104211848) do
 
   add_index "livingrooms", ["user_id"], name: "index_livingrooms_on_user_id", using: :btree
 
+  create_table "pictures", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "livingroom_id"
+  end
+
+  add_index "pictures", ["livingroom_id"], name: "index_pictures_on_livingroom_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -75,4 +87,5 @@ ActiveRecord::Schema.define(version: 20151104211848) do
   add_foreign_key "bookings", "livingrooms"
   add_foreign_key "bookings", "users"
   add_foreign_key "livingrooms", "users"
+  add_foreign_key "pictures", "livingrooms"
 end

@@ -43,7 +43,7 @@ class LivingroomsController < ApplicationController
 
 
     if @livingroom.save
-      redirect_to livingroom_path(@livingroom)
+      redirect_to new_livingroom_picture_path(@livingroom)
       flash[:notice] = "You have successfully created a new workspace!"
     else
       render :new
@@ -63,7 +63,7 @@ class LivingroomsController < ApplicationController
   end
 
   def destroy
-    @livingroom.delete
+    @livingroom.destroy
     redirect_to livingrooms_path
   end
 
