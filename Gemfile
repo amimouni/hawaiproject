@@ -22,6 +22,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# photo upload:
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Security:
 gem 'figaro'
 gem 'omniauth-facebook'
@@ -46,6 +50,13 @@ gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem "geocoder"
+
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -61,6 +72,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem "letter_opener"
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

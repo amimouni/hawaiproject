@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
   has_many :livingrooms, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
+
   def self.find_for_facebook_oauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
@@ -22,4 +28,3 @@ class User < ActiveRecord::Base
     end
   end
 end
-

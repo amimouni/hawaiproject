@@ -40,9 +40,23 @@ ActiveRecord::Schema.define(version: 20151105170055) do
     t.datetime "updated_at",  null: false
     t.string   "title"
     t.string   "city"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "livingrooms", ["user_id"], name: "index_livingrooms_on_user_id", using: :btree
+
+  create_table "pictures", force: :cascade do |t|
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
+    t.integer  "livingroom_id"
+  end
+
+  add_index "pictures", ["livingroom_id"], name: "index_pictures_on_livingroom_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -74,4 +88,5 @@ ActiveRecord::Schema.define(version: 20151105170055) do
   add_foreign_key "bookings", "livingrooms"
   add_foreign_key "bookings", "users"
   add_foreign_key "livingrooms", "users"
+  add_foreign_key "pictures", "livingrooms"
 end
