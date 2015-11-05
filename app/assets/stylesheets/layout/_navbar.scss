@@ -69,11 +69,11 @@
   &-button {
     margin-left: 10px;
     padding: 0 20px;
-    border-radius: 20em;
+    border-radius: 3px;
     line-height: 40px;
     background-color: #D23333;
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     border: 2px solid $brand-color;
 
     &:hover {
@@ -86,16 +86,19 @@
     margin-top: 15px;
     box-shadow: 1px 1px 4px #E6E6E6;
     border-color: #E6E6E6;
-    li > a {
-      transition: color 0.3s ease;
-      font-weight: lighter !important;
+    .fa {
       color: #999999 !important;
-      font-size: 15px !important;
-      line-height: 22px !important;
-      padding: 10px 20px;
-      &:hover {
-        background: transparent !important;
-        color: black !important;
+      li > a {
+        transition: color 0.3s ease;
+        font-weight: lighter !important;
+        color: #999999 !important;
+        font-size: 15px !important;
+        line-height: 22px !important;
+        padding: 10px 20px;
+        &:hover {
+          background: transparent !important;
+          color: black !important;
+        }
       }
     }
     &:before {
