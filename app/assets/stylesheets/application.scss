@@ -13,3 +13,8 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
