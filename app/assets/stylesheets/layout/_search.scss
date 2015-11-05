@@ -18,6 +18,10 @@
     z-index: 1;
   }
 
+  &-text-center {
+    padding: 30px;
+  }
+
   &-input {
     // flex: 0 1 300px;
     transition: all 0.15s ease;
@@ -29,12 +33,17 @@
     padding: 0 30px;
     font-size: 14px;
     outline: none;
+    vertical-align: middle;
   }
   &-input:focus  {
     border: 1px solid #CCCCCC;
   }
 }
 
-.form-control {
-  height: 43px;
+.form-control,
+.btn-primary {
+  height: 42px;
+}
+.text-center {
+padding: 30px;
 }

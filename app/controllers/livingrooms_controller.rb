@@ -14,6 +14,10 @@ class LivingroomsController < ApplicationController
     if params[:capacity]
       @livingrooms = @livingrooms.where(capacity: params[:capacity].to_i..100)
     end
+    @markers = Gmaps4rails.build_markers(@livingrooms) do |livingroom, marker|
+      marker.lat livingroom.latitude
+      marker.lng livingroom.longitude
+    end
   end
 
   def get_total_price
@@ -25,6 +29,7 @@ class LivingroomsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -35,6 +40,7 @@ class LivingroomsController < ApplicationController
     @livingroom = current_user.livingrooms.build(livingroom_params)
     # @livingroom = Livingroom.new(livingroom_params)
     # @livingroom.user = current_user
+
 
     if @livingroom.save
       redirect_to new_livingroom_picture_path(@livingroom)
@@ -57,7 +63,7 @@ class LivingroomsController < ApplicationController
   end
 
   def destroy
-    @livingroom.delete
+    @livingroom.destroy
     redirect_to livingrooms_path
   end
 
