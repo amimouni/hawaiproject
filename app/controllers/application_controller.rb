@@ -5,11 +5,16 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
+
+    if resource.persisted? && resource.first_name.blank?
+      edit_user_registration_path
     # "http://www.google.com"
-    root_path
+    else
+      root_path
+    end
   end
 
-  def after_sign_out_path_for(resource)
-    root_path
-  end
+  # def after_sign_out_path_for(resource)
+  #   root_path
+  # end
 end

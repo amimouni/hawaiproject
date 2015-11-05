@@ -12,8 +12,7 @@
             <%= f.input :email, required: true, autofocus: true %>
             <%= f.input :first_name, required: true, autofocus: true %>
             <%= f.input :last_name, required: true, autofocus: true %>
-            <%= f.input :job, label: "In which industry do you work ?", required: true, autofocus: true %>
-            <%= f.input :job, label: "What do you want to tell about your job?", required: true, autofocus: true %>
+            <%= f.input :job, label: "What's your job?", required: true, autofocus: true %>
             <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
