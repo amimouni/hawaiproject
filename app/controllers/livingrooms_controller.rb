@@ -57,7 +57,7 @@ class LivingroomsController < ApplicationController
   end
 
   def destroy
-    @livingroom.delete
+    @livingroom.destroy
     redirect_to livingrooms_path
   end
 
