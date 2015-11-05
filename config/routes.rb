@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :livingrooms, only: [:index, :show, :new] do
     resources :bookings, only: [:new, :create]
     get 'confirmation', to: 'bookings#confirm'
-
+    resources :pictures, only: [:new, :create, :index]
     member do
       post 'get_total_price', to: 'livingrooms#get_total_price'
     end
