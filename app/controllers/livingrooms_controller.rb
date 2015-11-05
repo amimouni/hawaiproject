@@ -41,6 +41,7 @@ class LivingroomsController < ApplicationController
     # @livingroom = Livingroom.new(livingroom_params)
     # @livingroom.user = current_user
 
+
     if @livingroom.save
       redirect_to livingroom_path(@livingroom)
       flash[:notice] = "You have successfully created a new workspace!"
