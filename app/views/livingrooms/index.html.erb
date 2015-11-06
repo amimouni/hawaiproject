@@ -3,18 +3,6 @@
   <div id="map" class="pull-right" style="width: 40%; height: 100%;">
   </div>
 
-  <% content_for(:after_js) do %>
-    <script>
-      $(document).on('ready', function() {
-        handler = Gmaps.build('Google');
-        handler.buildMap({ internal: { id: 'map' } }, function(){
-          markers = handler.addMarkers(<%= raw @markers.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-        });
-      })
-    </script>
-  <% end %>
 
 
   <div class="container padding-down pull-left" style="width: 60%; height: 100%;">
@@ -30,3 +18,15 @@
 
 </div>
 
+  <% content_for(:after_js) do %>
+    <script>
+      $(document).on('ready', function() {
+        handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function(){
+          markers = handler.addMarkers(<%= raw @markers.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+      })
+    </script>
+  <% end %>

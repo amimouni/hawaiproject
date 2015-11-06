@@ -38,23 +38,35 @@
   </div>
 
   <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2>Your stay</h2>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Arrival<br><%= @arrival_date %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Departure<br><%= @departure_date %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Length<br><%= @length_of_the_stay %> days</div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Total price<br><%= @total_amount %>€</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <%= link_to 'Book now', new_livingroom_booking_path(@livingroom, departure_date: @departure_date, arrival_date: @arrival_date, total_amount: @total_amount), class: "btn btn-success" %>
+        </div>
+      </div>
+
+
+    </div>
+
     <div class="col-sm-6 col-sm-offset-3 livingroom-layer">
       <h2>Description</h2>
       <p><%= @livingroom.description %></p>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 livingroom-layer">
+      <h2>Location</h2>
       <p>Address : <%= @livingroom.address %></li>
+      <div class="livingroom-layer-map">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@livingroom.address}" %>
+      </div>
     </div>
-
-    <div class="col-sm-6 col-sm-offset-3">
-      <h2>Your stay :</h2>
-      <ul>
-        <li>arrival date : <%= @arrival_date %></li>
-        <li>departure date : <%= @departure_date %></li>
-        <li>total length : <%= @length_of_the_stay %></li>
-      </ul>
-      <h2>Total amount : <%= @total_amount %>€</h2>
-      <%= link_to 'send a booking request', new_livingroom_booking_path(@livingroom, departure_date: @departure_date, arrival_date: @arrival_date, total_amount: @total_amount), class: "btn btn-success" %>
-    </div>
-    </div>
+  </div>
   </div>
 </div>
 

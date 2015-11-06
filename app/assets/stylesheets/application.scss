@@ -4,6 +4,7 @@
 
 // External libraries
 @import "bootstrap-sprockets";
+@import "bootstrap-datepicker";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -16,6 +17,7 @@
 @import "pages/index";
 @import "vendor/index";
 @import "livingrooms.scss";
+
 
 html, body {
   width: 100%;

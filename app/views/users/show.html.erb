@@ -19,7 +19,6 @@
 </div>
 
 <br>
-
     <!-- Ne renvoyer que les livingrooms qui ont un statut de
     booking égal à "Sent", pas toutes lesliving rooms -->
 <div class="container" style="background: #F3F3F3;">
@@ -33,7 +32,6 @@
             <br>
             <% livingroom.bookings.each do |booking| %>
               <p><i class="fa fa-calendar-o"></i> <%= @user.first_name.capitalize %> sent you a request from the <%=booking.arrival_date %> to the <%=booking.departure_date %> </p>
-
               <p><i class="fa fa-comment"></i> <%= @user.first_name.capitalize %> sent you message:</p>
               <p><i class="fa fa-quote-left fa fa-pull-left fa-border"></i><em><%=booking.message %></em> <i class="fa fa-quote-right"></i></p>
         <!--     <li> Status of the booking: <span class="btn btn-primary"><%=booking.status %></span> </li>

@@ -1,9 +1,11 @@
 <div class="card">
+
   <% if livingroom.pictures.size != 0 %>
     <span class="card-bg" style='background-image:url(<%= livingroom.pictures.first.picture.url %>)'></span>
   <% else %>
     <span class="card-bg" style="background-image:url('http://www.new-home-design.net/wp-content/uploads/2012/02/25-Wooden-Home-Office-Design-Combine-with-Living-Room.jpg')"></span>
   <% end %>
+
   <span class="card-gradient"></span>
   <span class="card-category"><%= livingroom.city %></span>
   <span class="card-text">
