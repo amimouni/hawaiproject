@@ -22,9 +22,9 @@
       flex: 0 1 auto;
       & span {
         background-color: $corail;
-        padding: 15px;
+        padding: 10px;
         position: absolute;
-        bottom: 10px;
+        bottom: -10px;
         left: 10%;
       }
     }
@@ -35,14 +35,48 @@
   padding-top: 20px;
   &-text {
     color: white;
-    padding-top: 10px;
+    // padding-top: 10px;
     & span {
       background-color: $corail;
       padding-left: 2px;
       padding-right: 2px;
       font-size: 15px;
-
+    }
+    & h3 {
+      padding-top: 0px !important;
     }
   }
-
 }
+
+.livingroom-layer {
+  padding-top: 10px;
+}
+
+.livingroom-booking-attributes {
+  color: white;
+  background-color: $corail;
+  font-size: 16px;
+  font-weight: bold;
+  &-button {
+    & a{
+      background-color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 30px;
+      padding-right: 30px;
+      border: 1px solid darken($corail, 10%);
+      border-radius: 3px;
+      color: $corail;
+      margin-left: auto;
+      margin-right: auto;
+      &:hover {
+        color: darken($corail, 10%);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+
+

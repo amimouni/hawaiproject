@@ -13,7 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-// app/assets/javascripts/application.js
+//= require bootstrap-datepicker
 //= require underscore
 //= require gmaps/google
 //= require_tree .
+
+$(function() {
+
+  $(".datepicker").datepicker({ format: "dd/mm/yyyy" });
+});
