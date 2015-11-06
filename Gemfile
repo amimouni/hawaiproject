@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 
+#datepicker
+gem 'bootstrap-datepicker-rails'
+
 # Security:
 gem 'figaro'
 gem 'omniauth-facebook'

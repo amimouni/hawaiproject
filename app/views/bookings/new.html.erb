@@ -1,33 +1,22 @@
 <%= render "cover" %>
 
 <div class="container">
+
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h2>Your request</h2>
-    </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Arrival<br><%= @booking.arrival_date.to_date %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Departure<br><%= @booking.departure_date.to_date %></div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Length<br><%= (@booking.departure_date.to_date - @booking.arrival_date.to_date).to_i %> days</div>
+        <div class="col-xs-12 col-sm-6 col-md-3 text-center livingroom-booking-attributes">Total price<br><%= @booking.total_amount %>€</div>
+      </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2 col-sm-offset-3">
-      <div class="livingroom-card-text">
-        <span>from <%= @booking.arrival_date.to_date %></span>
-      </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="livingroom-card-text">
-        <span>to <%= @booking.departure_date.to_date %></span>
-      </div>
-    </div>
-    <div class="col-sm-2">
-      <div class="livingroom-card-text">
-        <span>total <%= @booking.total_amount %>€</span>
-      </div>
-    </div>
-  </div>
-
 
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <h2>Please send message to the host</h2>
+      <div class="text-center">
         <%= simple_form_for [@livingroom, @booking] do |f| %>
           <%= f.input :message %>
           <%= f.input :arrival_date, :as => 'hidden', input_html: { value: @booking.arrival_date } %>
@@ -36,6 +25,7 @@
           <%= f.button :submit, 'Send request', class: "btn btn-success" %>
         <% end %>
       </div>
+    </div>
 
       <%# simple_form_for [@livingroom, @booking] do |f| %>
         <%# f.input :arrival_date, input_html: { value: params[:arrival_date].to_date } %>

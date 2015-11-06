@@ -2,6 +2,7 @@
 <%= render "cover" %>
 
 <div class="container">
+
   <div class="row">
     <div class="col-sm-2 col-sm-offset-3">
       <div class="livingroom-card text-center">
@@ -35,30 +36,47 @@
         </div>
       </div>
     </div>
-
   </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <% if @livingroom.user == current_user %>
+        <h2>Change something about your flat ?</h2>
+        <div class= "center">
+          <%= link_to 'edit', edit_livingroom_path(@livingroom), class: "btn btn-success" %>
+          <%= link_to 'delete', livingroom_path(@livingroom), method: :delete, class: "btn btn-danger" %>
+        </div>
+      <% else %>
+        <h2>Please choose your dates !</h2>
+        <div class="text-center">
+          <%= form_tag get_total_price_livingroom_path(@livingroom), :class => "form-inline" do %>
+            <%= label_tag :arrival_date %>
+            <%= text_field_tag :arrival_date, "", class: 'datepicker form-control' %>
+            <br><hr>
+            <%= label_tag :departure_date %>
+            <%= text_field_tag :departure_date, "", class: 'datepicker form-control' %>
+            <br><hr>
+            <%= submit_tag 'submit', :class => "btn btn-victory" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3 livingroom-layer">
       <h2>Description</h2>
       <p><%= @livingroom.description %></p>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 livingroom-layer">
+      <h2>Location</h2>
       <p>Address : <%= @livingroom.address %></li>
-    </div>
-
-    <div class="col-sm-6 col-sm-offset-3">
-      <% if @livingroom.user == current_user %>
-        <%= link_to 'edit', edit_livingroom_path(@livingroom), class: "btn btn-success" %>
-        <%= link_to 'delete', livingroom_path(@livingroom), method: :delete, class: "btn btn-danger" %>
-      <% else %>
-        <h2>Please choose your dates !</h2>
-        <%= form_tag get_total_price_livingroom_path do %>
-          <%= date_field_tag :arrival_date %>
-          <%= date_field_tag :departure_date %>
-          <%= submit_tag 'submit', class: "btn btn-victory" %>
-        <% end %>
-      <% end %>
-    </div>
+      <div class="livingroom-layer-map">
+        <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=400x300&sensor=false&maptype=roadmap&markers=color:red|#{@livingroom.address}" %>
+      </div>
     </div>
   </div>
+
 </div>
 
 
