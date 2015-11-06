@@ -43,6 +43,7 @@ gem 'puma', group: :production
 # authentification process
 gem 'devise'
 
+
 # security
 
 # Use ActiveModel has_secure_password

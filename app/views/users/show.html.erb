@@ -1,17 +1,16 @@
-<h2>Welcome on your user dashboard</h2>
+<div class="container">
+  <div class="row">
+    <h2>Welcome on your user dashboard</h2>
+      <div class="col-sm-4">
 
 <h3>Here are the livingrooms you listed</h3>
-<ul>
-  <% @livingrooms.each do |livingroom| %>
-  <li> <%=livingroom.title %> </li>
-  <li> <%=livingroom.description %> </li>
-  <li> <%=livingroom.city %> </li>
 
-<!--   <li> <%#livingroom.pictures.first.picture %> </li>
-  <li></li> -->
-  <% end %>
-</ul>
-<hr>
+  <ul>
+    <% @livingrooms.each do |livingroom| %>
+      <%= render 'layouts/card', livingroom: livingroom %>
+    <% end %>
+  </ul>
+
 
 <h3>Here are the bookings request you made </h3>
 <ul>
