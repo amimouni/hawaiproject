@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     # total_price = (@booking.departure_date - @booking.arrival_date) * @livingroom.price
     # @booking.total_amount = total_price
     @booking.user = current_user
-    @booking.status = "sent_to_host"
+    @booking.status = "Your request has been sent"
 
     if @booking.save
       render :confirm
