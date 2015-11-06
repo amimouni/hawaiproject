@@ -20,8 +20,6 @@
 //   color: white
 // }
 .footer-container {
-  position: relative;
-  &-footer {
     color: white;
     background-color: rgba(40, 40, 40, 0.8);
     border-top: 1px solid #dddddd;
@@ -30,7 +28,5 @@
     font-size: 15px;
     width: 100%;
     margin-top: 50px;
-    position: absolute;
-    bottom: 0;
   }
-}
+
