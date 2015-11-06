@@ -32,3 +32,10 @@ then the user may change the status to either "Accept" or "Deny"
 
 - montrer son résultat dans la vue user dashboard (show)
 -
+
+
+<%= image_tag current_user.picture %>
+
+
+
+<%raise %> pour mettre un stop pour débugger
