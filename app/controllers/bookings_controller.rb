@@ -1,5 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_livingroom
+  before_action :set_booking, only: :update
+
 
 
   def new
@@ -29,7 +31,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking.status.update
+    @booking.update(booking_params)
+    @booking.save
+    redirect_to user_path
+    # here we could put some ajax to make the reload more smooth
   end
 
 
@@ -37,6 +42,11 @@ class BookingsController < ApplicationController
   end
 
   private
+
+  def set_booking
+    @booking = Booking.find(params[:id])
+
+  end
 
   def set_livingroom
     @livingroom = Livingroom.find(params[:livingroom_id])

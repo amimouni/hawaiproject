@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   resources :livingrooms, only: [:index, :show, :new] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :edit, :update]
     get 'confirmation', to: 'bookings#confirm'
     resources :pictures, only: [:new, :create, :index]
     member do
