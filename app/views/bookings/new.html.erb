@@ -1,22 +1,39 @@
+<%= render "cover" %>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>Please leave a message to the host to finish your request</h1>
-      <p>Reminder :</p>
-      <ul>
-        <li>Your Livingroom : <%= @livingroom.title %></li>
-        <li>From <%= @booking.arrival_date %> to <%= @booking.departure_date %></li>
-        <li>Total price : <%= @booking.total_amount %>€</li>
-      </ul>
+      <h2>Your request</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-3">
+      <div class="livingroom-card-text">
+        <span>from <%= @booking.arrival_date.to_date %></span>
       </div>
-      <div class="col-sm-6 col-sm-offset-3">
-        <p>Please leave a message to the host</p>
+    </div>
+    <div class="col-sm-2">
+      <div class="livingroom-card-text">
+        <span>to <%= @booking.departure_date.to_date %></span>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="livingroom-card-text">
+        <span>total <%= @booking.total_amount %>€</span>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2>Please send message to the host</h2>
         <%= simple_form_for [@livingroom, @booking] do |f| %>
           <%= f.input :message %>
           <%= f.input :arrival_date, :as => 'hidden', input_html: { value: @booking.arrival_date } %>
           <%= f.input :departure_date, :as => 'hidden', input_html: { value: @booking.departure_date } %>
           <%= f.input :total_amount, :as => 'hidden', input_html: { value: @booking.total_amount } %>
-          <%= f.button :submit, 'Send request', class: "btn btn-danger" %>
+          <%= f.button :submit, 'Send request', class: "btn btn-success" %>
         <% end %>
       </div>
 

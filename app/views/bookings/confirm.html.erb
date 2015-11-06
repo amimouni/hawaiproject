@@ -1,9 +1,42 @@
+<%= render "cover" %>
+
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>Your request has been sent</h1>
-      <p>You'll receive an anwser soon</p>
+      <h2>Your request has been sent !</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-3">
+      <div class="livingroom-card-text">
+        <span>from <%= @booking.arrival_date.to_date %></span>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="livingroom-card-text">
+        <span>to <%= @booking.departure_date.to_date %></span>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="livingroom-card-text">
+        <span>total <%= @booking.total_amount %>€</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <br>
+      <p>Your message : "<%= @booking.message %>"</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2>You'll receive an anwser soon</h2>
       <p>Don't hesitate to contact us in cas you need.</p>
+      <%= link_to 'check my profile', user_path(@booking.user_id), class: "btn btn-success" %>
     </div>
   </div>
 </div>
