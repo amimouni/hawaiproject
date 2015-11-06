@@ -1,66 +1,86 @@
 <div class="container">
   <div class="row">
-    <h2>Welcome on your user dashboard</h2>
-      <div class="col-sm-4">
+    <h1 class="text-center">Hi <%= @user.first_name.capitalize %>,
+    <span>Welcome on your dashboard</h1></span>
+  </div>
+</div>
 
-<h3>Here are the livingrooms you listed</h3>
+<div class="container" style="background: #F3F3F3;">
+  <div class="row">
+    <h3 class="catchphrase">Here are your livingrooms:</h3>
+    <div class="col-sm-12 row-space-2 col-md-6">
+      <ul class="liststyle">
+        <% @livingrooms.each do |livingroom| %>
+          <%= render 'layouts/card', livingroom: livingroom %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
-  <ul>
-    <% @livingrooms.each do |livingroom| %>
-      <%= render 'layouts/card', livingroom: livingroom %>
-    <% end %>
-  </ul>
+<br>
 
+    <!-- Ne renvoyer que les livingrooms qui ont un statut de
+    booking égal à "Sent", pas toutes lesliving rooms -->
+<div class="container" style="background: #F3F3F3;">
+  <div class="row">
+      <h3 class="catchphrase">Here are the bookings requests you received</h3>
+      <ul class="liststyle">
 
-<h3>Here are the bookings request you made </h3>
-<ul>
-  <% @bookings_made.each do |booking| %>
-  <li> <%=booking.livingroom.title %> </li>
-  <li> <%=booking.livingroom.description.first(40) %> </li>
-  <li> <%=booking.arrival_date %> </li>
-  <li> <%=booking.departure_date %> </li>
-  <li> <%=booking.total_amount %> </li>
-  <li> <%=booking.status %> </li>
-    <% if booking.status == "Validated" %>
-      <span class="btn btn-success"><%=booking.status %></span>
-    <% elsif booking.status == "Refused" %>
-      <span class="btn btn-danger"><%=booking.status %></span>
-    <% else %>
-      <span class="btn btn-primary"><%=booking.status %></span>
-    <% end %>
-  <br>
-  <% end %>
-</ul>
-<hr>
+        <% @livingrooms.each do |livingroom| %>
+          <div class="border">
+            <p><strong><%=livingroom.title.capitalize %> </strong></p>
+            <br>
+            <% livingroom.bookings.each do |booking| %>
+              <p><i class="fa fa-calendar-o"></i> <%= @user.first_name.capitalize %> sent you a request from the <%=booking.arrival_date %> to the <%=booking.departure_date %> </p>
 
-<!-- Ne renvoyer que les livingrooms qui ont un statut de
-booking égal à "Sent", pas toutes lesliving rooms -->
-<h3>Here are the bookings requests you received</h3>
-<ul>
-  <% @livingrooms.each do |livingroom| %>
-    <li>Living room booked: <%=livingroom.title %> </li>
-    <% livingroom.bookings.each do |booking| %>
-      <li> By user ID: <%=booking.user_id %> </li>
-      <li> From: <%=booking.arrival_date %> </li>
-      <li> To: <%=booking.departure_date %> </li>
-      <li> Message from the user: <%=booking.message %> </li>
-<!--     <li> Status of the booking: <span class="btn btn-primary"><%=booking.status %></span> </li>
- -->
-        <% if booking.status == "Validated" %>
-          <span class="btn btn-primary"><%=booking.status %></span>
-        <% elsif booking.status == "Refused" %>
-          <span class="btn btn-danger"><%=booking.status %></span>
-        <% else %>
-          <%= simple_form_for [livingroom, booking] do |f| %>
-            <%= f.input :status, collection: ["Pending", "Validated", "Refused"] %>
-            <%= f.button :submit, class: "btn btn-success" %>
+              <p><i class="fa fa-comment"></i> <%= @user.first_name.capitalize %> sent you message:</p>
+              <p><i class="fa fa-quote-left fa fa-pull-left fa-border"></i><em><%=booking.message %></em> <i class="fa fa-quote-right"></i></p>
+        <!--     <li> Status of the booking: <span class="btn btn-primary"><%=booking.status %></span> </li>
+         -->
+                <% if booking.status == "Validated" %>
+                  <span class="btn btn-primary"><%=booking.status %></span>
+                <% elsif booking.status == "Refused" %>
+                  <span class="btn btn-danger"><%=booking.status %></span>
+                <% else %>
+                  <%= simple_form_for [livingroom, booking] do |f| %>
+                    <%= f.input :status, collection: ["Accepted", "Refused"] %>
+                    <%= f.button :submit, class: "btn btn-success" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+          </div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="container" style="background: #F3F3F3;">
+  <div class="row">
+      <h3 class="catchphrase">Here are the bookings request you made </h3>
+        <ul class="liststyle"><% @bookings_made.each do |booking| %>
+          <p><%=booking.livingroom.title %></p>
+          <p><%=booking.livingroom.description.first(40) %></p>
+          <p><i class="fa fa-calendar-o"></i> from the <%=booking.arrival_date %> to the <%=booking.departure_date %></p>
+          <p><%=booking.total_amount %>€</p>
+          <% if booking.status == "Validated" %>
+            <span class="btn btn-success"><%=booking.status %></span>
+          <% elsif booking.status == "Refused" %>
+            <span class="btn btn-danger"><%=booking.status %></span>
+          <% else %>
+            <span class="btn btn-primary"><%=booking.status %></span>
           <% end %>
         <% end %>
-        <br>
-    <% end %>
-  <% end %>
-</ul>
-<hr>
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+
+
 
 <!-- PISTE
   - la route est mauvaise car bookings#edit est disponible sur users#show ?
