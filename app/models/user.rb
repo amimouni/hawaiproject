@@ -8,7 +8,13 @@ class User < ActiveRecord::Base
   has_many :livingrooms, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
-  after_create :send_welcome_email
+  has_attached_file :picture,
+    styles: { medium: "300x300>", thumb: "100x100>" }
+
+  validates_attachment_content_type :picture,
+    content_type: /\Aimage\/.*\z/
+
+  # after_create :send_welcome_email
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
@@ -23,6 +29,8 @@ class User < ActiveRecord::Base
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
       user.picture = auth.info.image
+      user.job = ""
+      user.industry = ""
       user.token = auth.credentials.token
       user.token_expiry = Time.at(auth.credentials.expires_at)
     end

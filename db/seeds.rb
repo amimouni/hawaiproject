@@ -6,6 +6,21 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+######################## SEED USER ###############################
+
+user = User.new
+user.email = "alaindelon@moi.fr"
+user.password = 'valid_password'
+user.password_confirmation = 'valid_password'
+# user.encrypted_password = "#$taawktljasktlw4aaglj"
+user.first_name = "Alain"
+user.last_name = "Delon"
+user.industry = "Movie big business"
+user.job = "Being myself, what else?"
+user.save
+
+
+######################## SEED LIVINGROOM ###############################
 
 Livingroom.destroy_all
 livingrooms = [
