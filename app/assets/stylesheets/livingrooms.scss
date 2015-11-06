@@ -2,3 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.livingroom-pictures {
+  position: relative;
+  background-size: cover;
+  width:100%;
+  padding-top: 460px;
+  &-labels {
+    background-color: rgba(40, 40, 40, 0.6);
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    color: white;
+    display: flex;
+    &-title {
+      flex: 0 1 auto;
+    }
+    &-price {
+      flex: 0 1 auto;
+      & span {
+        background-color: $corail;
+        padding: 15px;
+        position: absolute;
+        bottom: 10px;
+        left: 10%;
+      }
+    }
+  }
+}
+
+.livingroom-card {
+  padding-top: 20px;
+  &-text {
+    color: white;
+    padding-top: 10px;
+    & span {
+      background-color: $corail;
+      padding-left: 2px;
+      padding-right: 2px;
+      font-size: 15px;
+
+    }
+  }
+
+}
