@@ -1,0 +1,46 @@
+<h2>Welcome on your user dashboard</h2>
+
+<h3>Here are the livingrooms you listed</h3>
+<ul>
+  <% @livingrooms.each do |livingroom| %>
+  <li> <%=livingroom.title %> </li>
+  <li> <%=livingroom.description %> </li>
+<!--   <li> <%#livingroom.pictures.first.picture %> </li>
+  <li></li> -->
+  <% end %>
+</ul>
+<hr>
+
+<h3>Here are the bookings request you made </h3>
+<ul>
+  <% @bookings_made.each do |booking| %>
+  <li> <%=booking.livingroom.title %> </li>
+  <li> <%=booking.livingroom.description %> </li>
+  <li> <%=booking.arrival_date %> </li>
+  <li> <%=booking.departure_date %> </li>
+  <li> <%=booking.total_amount %> </li>
+  <% end %>
+</ul>
+<hr>
+
+<!-- Ne renvoyer que les livingrooms qui ont un statut de
+booking égal à "Sent", pas toutes lesliving rooms -->
+<h3>Here are the bookings requests you received</h3>
+<ul>
+  <% @livingrooms.each do |livingroom| %>
+  <li>Living room booked: <%=livingroom.title %> </li>
+    <% livingroom.bookings.each do |booking| %>
+  <li> By user ID: <%=booking.user_id %> </li>
+  <li> From: <%=booking.arrival_date %> </li>
+  <li> To: <%=booking.departure_date %> </li>
+  <li> Message from the user: <%=booking.message %> </li>
+  <li> Status of the booking: <span class="btn btn-primary"><%=booking.status %></span> </li>
+
+   <%= simple_form_for @booking do |f| %>
+          <%= f.input :status, collection: ["Validated", "Refused"] %>
+          <%= f.button :submit, class: "btn btn-success" %>
+    <% end %>
+    <br>
+  <% end %>
+</ul>
+<hr>
