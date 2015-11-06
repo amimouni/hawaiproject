@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :livingrooms, only: [:create, :edit, :update, :destroy]
+    resources :users, only: [:show, :edit, :update]
   end
 
   resources :livingrooms, only: [:index, :show, :new] do
