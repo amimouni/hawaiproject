@@ -1,18 +1,47 @@
-<%= link_to 'return to home', livingrooms_path %>
-<br>
+<%= render "cover" %>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <h1><%= @livingroom.title %></h1>
-        <ul>
-          <li>Description : <%= @livingroom.description %></li>
-          <li>Capacity : <%= @livingroom.capacity %></li>
-          <li>Price : <%= @livingroom.price %></li>
-          <li>Address : <%= @livingroom.address %></li>
-          <li>City : <%= @livingroom.city %></li>
-        </ul>
 
+  <div class="row">
+    <div class="col-sm-2 col-sm-offset-3">
+      <div class="livingroom-card text-center">
+        <div class= "livingroom-card-image">
+          <%= image_tag 'users69.png' %>
+        </div>
+        <div class="livingroom-card-text">
+          <span><%= @livingroom.capacity.to_i %> workers</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="livingroom-card text-center">
+        <div class= "livingroom-card-image">
+          <%= image_tag 'tag17.png' %>
+        </div>
+        <div class="livingroom-card-text">
+          <span><%= @livingroom.price %>€ / day</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-2">
+      <div class="livingroom-card text-center">
+        <div class= "livingroom-card-image">
+          <%= image_tag 'pin56.png' %>
+        </div>
+        <div class="livingroom-card-text">
+          <span>in <%= @livingroom.city %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3 livingroom-layer">
+      <h2>Description</h2>
+      <p><%= @livingroom.description %></p>
+      <p>Address : <%= @livingroom.address %></li>
     </div>
 
     <div class="col-sm-6 col-sm-offset-3">
