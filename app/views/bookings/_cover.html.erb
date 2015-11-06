@@ -1,16 +1,27 @@
-<div class="text-center livingroom-pictures" style='background-image:url(<%= @livingroom.pictures.first.picture.url %>)'>
-  <div class="container">
-    <div class="row livingroom-pictures-labels">
-      <div class="col-xs-6 col-xs-offset-2 livingroom-pictures-labels-title">
-        <h1><%= @livingroom.title %></h1>
+<% if @livingroom.pictures.first != nil %>
+  <div class="text-center livingroom-pictures" style='background-image:url(<%= @livingroom.pictures.first.picture.url %>)'>
+    <div class="container">
+      <div class="row livingroom-pictures-labels">
+        <div class="col-xs-6 col-xs-offset-3 livingroom-pictures-labels-title text-center">
+          <h1><%= @livingroom.title %></h1>
+        </div>
       </div>
     </div>
   </div>
+<% else %>
+  <div class="text-center livingroom-pictures" style='background-image:url("https://s3-eu-west-1.amazonaws.com/burolao-bucket/development/pictures/pictures/52e9319f91e7a.jpg")'>
+    <div class="container">
+      <div class="row livingroom-pictures-labels">
+        <div class="col-xs-6 col-xs-offset-3 livingroom-pictures-labels-title text-center">
+          <h1><%= @livingroom.title %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <!--        <%# @livingroom.pictures.each do |picture| %>
 
           <%# image_tag picture.picture.url(:large) %>
         <%# end %> -->
-
-</div>
 
