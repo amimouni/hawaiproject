@@ -8,10 +8,11 @@ Rails.application.routes.draw do
 
   authenticate :user do
     resources :livingrooms, only: [:create, :edit, :update, :destroy]
+    resources :users, only: [:show, :edit, :update]
   end
 
   resources :livingrooms, only: [:index, :show, :new] do
-    resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create, :edit, :update]
     get 'confirmation', to: 'bookings#confirm'
     resources :pictures, only: [:new, :create, :index]
     member do
